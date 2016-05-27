@@ -36,6 +36,9 @@
 
 const {classes: Cc, interfaces: Ci, utils: Cu} = Components;
 Cu.import("resource://gre/modules/Services.jsm");
+Cu.import("resource://easythemes/content/stylesheet-manager.js");
+
+const CUSTOM_STYLESHEET_URL = 'chrome://easythemes-skin/content/custom.inc.css';
 
 /**
  * Apply a callback to each open and new browser windows.
@@ -149,7 +152,16 @@ function unload(callback, container) {
 /**
  * Handle the add-on being activated on install/enable
  */
-function startup(data, reason) {}
+function startup(data, reason) {
+	let stylesheetManager = new StylesheetManager();
+	stylesheetManager.loadStylesheet(CUSTOM_STYLESHEET_URL);
+	unload(() => {
+		stylesheetManager.unloadStylesheet(CUSTOM_STYLESHEET_URL);
+	});
+
+// TODO: add an observe method to an object and pass that into services.obs.addObserver. remove it on unload.
+// TODO: later, implement something that fires this signal when the about:theme page is updated
+}
 
 /**
  * Handle the add-on being deactivated on uninstall/disable
