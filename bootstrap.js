@@ -153,11 +153,11 @@ function unload(callback, container) {
  * Handle the add-on being activated on install/enable
  */
 function startup(data, reason) {
-	let stylesheetManager = new StylesheetManager();
-	stylesheetManager.loadStylesheet(CUSTOM_STYLESHEET_URL);
-	unload(() => {
-		stylesheetManager.unloadStylesheet(CUSTOM_STYLESHEET_URL);
-	});
+  let stylesheetManager = new StylesheetManager();
+  stylesheetManager.loadStylesheet(CUSTOM_STYLESHEET_URL);
+  unload(() => {
+    stylesheetManager.unloadStylesheet(CUSTOM_STYLESHEET_URL);
+  });
 
 // TODO: add an observe method to an object and pass that into services.obs.addObserver. remove it on unload.
 // TODO: later, implement something that fires this signal when the about:theme page is updated
