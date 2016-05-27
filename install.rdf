@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>easythemes@mozilla.com</em:id>
+    <em:type>2</em:type>
+    <em:bootstrap>true</em:bootstrap>
+    <em:name>Easy Themes</em:name>
+    <em:version>0.0.1</em:version>
+    <em:homepageURL>https://github.com/6a68/easythemes</em:homepageURL>
+    <em:updateURL>https://6a68.github.io/easythemes/easythemes.update.rdf</em:updateURL>
+    <em:iconURL>resource://easythemes/skin/icon.png</em:iconURL>
+    <em:description>To be filled in later</em:description>
+    <em:creator>Jared Hirsch</em:creator>
+    <em:developer>Jared Hirsch</em:developer>
+    <em:contributor>Blake Winton</em:contributor>
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
+        <em:minVersion>45.0a1</em:minVersion>
+        <em:maxVersion>*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>

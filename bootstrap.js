@@ -36,7 +36,8 @@
 
 const {classes: Cc, interfaces: Ci, utils: Cu} = Components;
 Cu.import("resource://gre/modules/Services.jsm");
-Cu.import("resource://easythemes/content/stylesheet-manager.js");
+
+const {require} = Cu.import(`resource://gre/modules/commonjs/toolkit/require.js`, {});
 
 const CUSTOM_STYLESHEET_URL = 'chrome://easythemes-skin/content/custom.inc.css';
 
@@ -153,6 +154,7 @@ function unload(callback, container) {
  * Handle the add-on being activated on install/enable
  */
 function startup(data, reason) {
+  Cu.import("chrome://easythemes/content/stylesheet-manager.js");
   let stylesheetManager = new StylesheetManager();
   stylesheetManager.loadStylesheet(CUSTOM_STYLESHEET_URL);
   unload(() => {
