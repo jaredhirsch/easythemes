@@ -32,6 +32,11 @@ the stylesheets on the XUL DOM with the hacked ones.
 With the variables swapped into place, we could then script their values by twiddling
 a style attribute on the topmost element in the XUL DOM.
 
+**Note:** *after initially writing this file, I discovered that the devedition light/dark
+theming work had already moved a ton of built-in chrome colors to CSS variables. Currently
+working on a proof-of-concept based on just changing those colors, without resorting to
+any dynamic stylesheet modification; see `lib/stylesheet-manager.js` for the code.*
+
 ### Users can interact with an unintimidating theme builder on `about:theme`
 
 This functionality could be exposed to users via an about:theme page, where we can show
